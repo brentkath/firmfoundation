@@ -9,11 +9,11 @@ end
 
 # Use PostgreSQL for production
 group :production do
-  gem "pg", "~> 1.1"
+  gem "pg", "~> 1.5"
 end
 
 # --- RAILS ITSELF ---
-gem "rails", "~> 8.0.2"
+gem "rails", "~> 7.1.0"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use the Puma web server [https://github.com/puma/puma]
