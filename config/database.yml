@@ -25,3 +25,7 @@ production:
   queue:
     adapter: postgresql
     url: <%= ENV["DATABASE_URL"] %>
+
+  cache:
+    adapter: postgresql
+    url: <%= ENV["DATABASE_URL"] %>
