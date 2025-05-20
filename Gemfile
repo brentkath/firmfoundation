@@ -4,7 +4,7 @@ ruby "3.2.2"
 
 # Use sqlite3 only for development and test
 group :development, :test do
-  gem "sqlite3", "~> 1.4"
+  gem "sqlite3", "~> 2.6"
   gem "debug", platforms: [:mri, :mingw, :x64_mingw]
 end
 
