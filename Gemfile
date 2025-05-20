@@ -14,7 +14,7 @@ group :production do
 end
 
 # --- RAILS ITSELF ---
-gem "rails", "~> 7.1.0"
+gem "rails", "~> 8.0.2"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use the Puma web server [https://github.com/puma/puma]
