@@ -5,6 +5,7 @@ ruby "3.2.2"
 # Use sqlite3 only for development and test
 group :development, :test do
   gem "sqlite3", "~> 1.4"
+  gem "debug", platforms: [:mri, :mingw, :x64_mingw]
 end
 
 # Use PostgreSQL for production
@@ -51,9 +52,6 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
-
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
 
