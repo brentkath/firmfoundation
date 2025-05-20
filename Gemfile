@@ -2,12 +2,12 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
-# Use sqlite3 in development and test only
+# Use sqlite3 only for development and test
 group :development, :test do
   gem "sqlite3", "~> 1.4"
 end
 
-# Use PostgreSQL in production
+# Use PostgreSQL for production
 group :production do
   gem "pg", "~> 1.1"
 end
