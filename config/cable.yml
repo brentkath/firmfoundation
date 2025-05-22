@@ -9,7 +9,8 @@ test:
   adapter: test
 
 production:
-  adapter: solid_cable
+  adapter: redis
+  url: redis://red-d0lt9sadbo4c73c8v7ag:6379
   connects_to:
     database:
       writing: cable
