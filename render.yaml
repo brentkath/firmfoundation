@@ -3,12 +3,20 @@ services:
     name: firmfoundation
     env: ruby
     plan: free
-    buildCommand: "./.render-build.sh"
-    startCommand: "bundle exec puma -C config/puma.rb"
+    buildCommand: >
+      cd src &&
+      bundle install --without development test &&
+      RAILS_ENV=production bundle exec rake db:migrate &&
+      RAILS_ENV=production bundle exec rake assets:precompile
+    startCommand: "cd src && bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
           name: firmfoundation-db
           property: connectionString
       - key: REDIS_URL
-        value: redis://red-d0lt9sadbo4c73c8v7ag:6379 
+        value: redis://red-d0lt9sadbo4c73c8v7ag:6379
+      - key: RAILS_SERVE_STATIC_FILES
+        value: "true"
+      - key: RAILS_LOG_TO_STDOUT
+        value: "true" 
