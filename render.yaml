@@ -4,11 +4,10 @@ services:
     env: ruby
     plan: free
     buildCommand: >
-      cd src &&
       bundle install --without development test &&
       RAILS_ENV=production bundle exec rake db:migrate &&
       RAILS_ENV=production bundle exec rake assets:precompile
-    startCommand: "cd src && bundle exec puma -C config/puma.rb"
+    startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
