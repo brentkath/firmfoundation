@@ -30,8 +30,7 @@ FROM base AS build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libyaml-dev pkg-config libpq-dev && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+    apt-get install -y build-essential libpq-dev nodejs yarn curl
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
