@@ -26,3 +26,11 @@ test:
 # is mounted as a persistent Docker volume in config/deploy.yml.
 production:
   url: <%= ENV['DATABASE_URL'] %>
+  cable:
+    <<: *default
+    adapter: postgresql
+    encoding: unicode
+    database: cable_production
+    pool: 5
+    username: <%= ENV['DATABASE_USER'] %>
+    password: <%= ENV['DATABASE_PASSWORD'] %>
