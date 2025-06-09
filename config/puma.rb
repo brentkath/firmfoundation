@@ -43,7 +43,7 @@ pidfile ENV["PIDFILE"] if ENV["PIDFILE"]
 
 preload_app!
 
-rackup      DefaultRackup
+rackup      "config.ru"
 environment ENV['RACK_ENV'] || 'development'
 
 on_worker_boot do
